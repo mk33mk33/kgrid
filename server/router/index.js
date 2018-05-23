@@ -8,7 +8,7 @@ module.exports = function(app){
         ctx.jsonp = {msg:'wikiapi'};
     })
     // knode 增删改查
-    router.post('/wikiapi/knode', kc.createKnode);
+    router.post('/wikiapi/knode', kc.upsertKnode);
     // router.get('/wikiapi/knode', kc.getKnode);
     // router.put('/wikiapi/knode', kc.updateKnode);
     // router.delete('/wikiapi/knode', kc.deleteKnode);

@@ -64,7 +64,7 @@ module.exports = function () {
     var level = getLevel(ctx);
     var combinedTokens = assembleTokens(ctx);
     combinedTokens.push({token:':error',replacement:error});
-    logger.log(level, '<<=='+format(fmt, combinedTokens));
+    logger.log(level, '<<== '+format(fmt, combinedTokens));
   }
 
 }
