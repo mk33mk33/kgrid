@@ -1,0 +1,121 @@
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 720px;
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system,Helvetica,sans-serif;
+    line-height: 1.5;
+}
+.knode-card{
+    margin: 10px;
+    padding: 10px;
+
+}
+.knode-nodename{
+    font-size: 30px;
+    color: blue;
+    margin-right: 3px;
+}
+.knode-card-header{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+}
+.knode-card-content{
+    padding-top: 3px;
+}
+.knode-content{
+    margin: 10px
+}
+.knode-part{
+    border-left: 10px solid #4F9CEE;
+    padding-left: 5px;
+    /*padding-bottom: 5px;*/
+    font-size: 17px;
+    border-bottom: 1px solid #4F9CEE;
+}
+.knode-right-op{
+    float: right;
+    font-size: 12px;
+    line-height: 2;
+    color: #24a6de;
+    cursor: pointer;
+}
+.knode-article{
+    margin: 10px
+}
+.knode-bd-op {
+    padding: 3px 7px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #24a6de;
+    cursor: pointer;
+}
+.markdown-container {
+    line-height: 1.6
+}
+.markdown-container p {
+    margin: 10px 5px;
+    font-size: 14px;
+    word-break: break-word;
+}
+.markdown-container h1 {
+    font-size: 26px;
+    margin: 10px 5px;
+}
+.markdown-container h2 {
+    font-size: 24px;
+    margin: 10px 5px;
+}
+.markdown-container h3 {
+    font-size: 22px;
+    margin: 10px 5px;
+}
+.markdown-container h4 {
+    font-size: 20px;
+    margin: 10px 5px;
+}
+.markdown-container h5 {
+    font-size: 18px;
+    margin: 10px 5px;
+}
+.markdown-container h6 {
+    font-size: 16px;
+    margin: 10px 5px;
+}
+.markdown-container blockquote{
+    background:#f9f9f9;
+    border: 1px solid #ddd;
+    padding: 3px;
+    border-radius: 5px;
+    color: #666;
+}
+.markdown-container code{
+    font-family: monospace;
+    color: blue;
+    padding: 0 3px;
+}
+
+.markdown-container pre{
+    background:#f9f9f9;
+    border: 1px solid #ddd;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: #666;
+    overflow: auto;
+}
+.markdown-container a {
+    font-style: italic;
+}
+.markdown-container ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.markdown-container ol {
+    padding-left: 20px;
+
+}
+.markdown-container li {
+
+
+}

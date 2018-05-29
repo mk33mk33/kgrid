@@ -1,3 +1,5 @@
+var  conn = require('./conn')
+var  mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
@@ -11,5 +13,5 @@ const KarticleSchema = new Schema({
     deletedAt: Date
 })
 
-var Karticle = mongoose.model('Karticle',KarticleSchema)
+var Karticle = conn.model('karticle',KarticleSchema)
 module.exports = Karticle;

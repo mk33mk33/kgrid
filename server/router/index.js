@@ -9,7 +9,7 @@ module.exports = function(app){
     })
     // knode 增删改查
     router.post('/wikiapi/knode', kc.upsertKnode);
-    // router.get('/wikiapi/knode', kc.getKnode);
+    router.get('/wikiapi/knode', kc.getKnode);
     // router.put('/wikiapi/knode', kc.updateKnode);
     // router.delete('/wikiapi/knode', kc.deleteKnode);
 

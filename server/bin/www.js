@@ -11,6 +11,7 @@ const body = require('koa-bodyparser');
 const router = require('../router');
 // const auth = require('../biz/lnpm/middleware/auth.js');
 const logger = require('../middleware/log.js');
+const fmtParams = require('../middleware/fmtParams.js');
 app.use(logger());
 //1. jsonp 后切的jsonp处理
 jsonp(app);
@@ -18,6 +19,7 @@ jsonp(app);
 // app.use(mount('/legosv5/static', staticDirectory));
 //3.bodyParser
 app.use(body());
+app.use(fmtParams());
 //4.cors
 // app.use(cors({
 //   allowMethods: 'GET,HEAD',
