@@ -1,6 +1,7 @@
 module.exports = {
   entry: {
-    'knode-app':'./src/knode-app.js'
+    'knode-app':'./src/knode-app.js',
+    'knode-editor':'./src/knode-editor.js'
   },
   output: {
     path: __dirname + '/dist',

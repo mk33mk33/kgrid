@@ -1,36 +1,12 @@
 // 创建一个知识节点
 // 小写去空格作为name,首先要查找是否有相同节点
-var ensureKnode = require('../service/ensureKnode')
-var addChildren = require('../service/addChildren')
-var addParents = require('../service/addParents')
-var upsertKnode = require('../service/upsertKnode')
-var getKnode = require('../service/getKnode')
-exports.getKnode = ctx => {
-    var obj = ctx.request.query;
-    if(!obj || !obj.name){
-        ctx.status = 200;
-        ctx.jsonp = {
-          errcode:-1,
-          msg:'参数错误'
-        }
-        return
-    }
-    var name = obj.name
-    return getKnode({name:name}).then(data=>{
-      ctx.status = 200;
-      ctx.jsonp = {msg:'getKnode',code:0,data:data};
-    })
-    .catch(err=>{
-        console.log('获取知识节点失败',err)
-        ctx.status = 200;
-        ctx.jsonp  = {
-          msg:err,
-          code:-1
-        }
-    })
-}
+var ensureKnode = require('../../service/ensureKnode')
+var addChildren = require('../../service/addChildren')
+var addParents = require('../../service/addParents')
+var upsertKnodeService = require('../../service/upsertKnode')
 
-exports.upsertKnode = ctx => {
+
+function upsertKnode (ctx,next) {
 
     console.log(ctx.request.body)
     var obj = ctx.request.body;
@@ -88,31 +64,26 @@ exports.upsertKnode = ctx => {
             related:obj.related,
             samenode:obj.samenode
         }
-        node.brother = data.map(item=>{
-            var ret = []
-            if(item){
-                var p = Object.keys(item)[0]
-                var v = item[p]
-                var i = v.indexOf(key)
-                if(i!=-1){
-                    v.splice(i,1)
-                }
-                ret = v.map(s=>{
-                    return `${p}::${s}`
-                })
-            }
-            return ret;
-        }).reduce((a1,a2)=>{
-            return a1.concat(a2)
-        })
-        console.log('检查reduce后的兄弟节点',node.brother)
-
-        return upsertKnode(node)
-        // ensureKnode({
-        //     name:obj.name,
-        //     brother:data,
-        //
+        // node.brother = data.map(item=>{
+        //     var ret = []
+        //     if(item){
+        //         var p = Object.keys(item)[0]
+        //         var v = item[p]
+        //         var i = v.indexOf(key)
+        //         if(i!=-1){
+        //             v.splice(i,1)
+        //         }
+        //         ret = v.map(s=>{
+        //             return `${p}::${s}`
+        //         })
+        //     }
+        //     return ret;
+        // }).reduce((a1,a2)=>{
+        //     return a1.concat(a2)
         // })
+        // console.log('检查reduce后的兄弟节点',node.brother)
+
+        return upsertKnodeService(node)
     })
     .then(data=>{
         console.log('创建/更新知识节点成功')
@@ -123,8 +94,9 @@ exports.upsertKnode = ctx => {
         console.log('创建/更新知识节点失败',err)
         ctx.status = 200;
         ctx.jsonp  = {
-          msg:err,
+          msg:err.toString(),
           code:-1
         }
     })
 }
+module.exports = upsertKnode;

@@ -27,10 +27,11 @@ module.exports = function upsertKnode (obj) {
       })
       if(obj.content)updateObj.$set.content = obj.content
       if(obj.karticles)updateObj.$addToSet.karticles = obj.karticles
-      if(obj.samenode)updateObj.$set.samenode = obj.samenode
+      if(obj.samenode)updateObj.$set.samenode = obj.samenode.trim().toLowerCase() // samenode应该用key
       updateObj.$set.updatedAt = Date.now()
 
-
+      if(!Object.keys(updateObj.$addToSet).length)delete updateObj.$addToSet
+      if(!Object.keys(updateObj.$set).length)delete updateObj.$set
       return Knode.findOneAndUpdate(
           {key:key},
           updateObj,

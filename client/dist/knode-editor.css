@@ -1,0 +1,120 @@
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 720px;
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system,Helvetica,sans-serif;
+    line-height: 1.5;
+}
+.knode-editor-container{
+    padding-top: 20px;
+    background: #f4f4f4;
+}
+.knode-editor-item{
+    padding: 5px;
+}
+.knode-editor-nav {
+    color: #9e780b;
+}
+.knode-editor-item .knode-editor-nodename {
+    width: 300px;
+    display: inline-block;
+    outline: none;
+    background: #fdf6e3;
+    border: 1px dashed #e2cf99;
+    color: #9e780b;
+}
+.knode-editor-item .knode-editor-nodename:focus{
+    -webkit-box-shadow: 0 0 0 ;
+    box-shadow: 0 0 0 ;
+}
+.knode-editor-label{
+    font-size: 16px;
+    margin-right: 5px;
+    color: #9e780b;
+}
+.knode-editor-btn{
+  color: #9e780b;
+  background: #fdf6e3;
+  margin: 0px 5px 10px;
+}
+.knode-editor-btn:hover{
+  background: #fbdb84;
+}
+.knode-editor-btn:active{
+  background: #eacf83;
+}
+.knode-editor-hr{
+    margin: 10px 5px;
+    color: #000;
+    border: 1px solid #e2cf99;
+}
+.knode-editor-xnode{
+    display: -webkit-inline-box;
+    padding: 12px 15px 10px;
+    background: #fdf6e3;
+    color: #9e780b;
+    border: 1px dashed;
+    margin: 10px 5px;
+}
+.knode-editor-close{
+    background-image: url(img/close.png);
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+}
+.knode-editor-codemirror{
+    padding: 5px;
+    border: 1px dashed #9e780b;
+}
+.knode-editor-karticle{
+  padding: 12px 15px 10px;
+  background: #fdf6e3;
+  color: #9e780b;
+  border: 1px dashed;
+  margin: 10px 5px;
+
+}
+.knode-editor-foot{
+    height: 50px;
+}
+.knode-editor-mask{
+  z-index: 3000;
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.knode-editor-dialog{
+    min-width: 300px;
+}
+.knode-md-toolbar{
+    padding: 4px 2px 8px;
+}
+.knode-md-btn{
+  background: #fdf6e3;
+  color: #9e780b;
+  border-color: #9e780b;
+  border: 1px dashed;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+}
+.knode-md-btn:hover{
+  background: #fdf6e3;
+}
+.knode-md-btn:active{
+  background: #eacf83;
+}

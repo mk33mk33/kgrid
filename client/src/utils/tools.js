@@ -4,7 +4,7 @@ function getUrlParams (key){
     var ret = {}
     p.forEach(seg=>{
         var l = seg.split('=')
-        if(l.length == 2)ret[l[0]] = l[1]
+        if(l.length == 2)ret[l[0]] = decodeURIComponent(l[1])
     })
     if(key)return ret[key]
     return ret;

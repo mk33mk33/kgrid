@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "markdown-it": "^8.4.1",
     "metro4": "^4.2.7",
+    "vue-codemirror": "^4.0.5",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16"
   }

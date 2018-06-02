@@ -1,5 +1,6 @@
 var Knode = require('../models/knode')
 module.exports = function ensureKnode (obj) {
+    // 主要是做查询用
     // 确保节点存在，不存在则创建，仅确保节点名即可,也做查询用，返回一个节点的数据
     if(!obj || !obj.name)throw 'ensureKnode error: params error'
     var name = obj.name;

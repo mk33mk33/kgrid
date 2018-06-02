@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// 读取文件，解析出 节点数据 或者文章数据 提交到服务器
+// 读取文件，解析出文章数据 提交到服务器
 var Fs = require('fs-extra');
 var request = require('superagent');
 var Path = require('path')
@@ -29,7 +29,7 @@ if(argv.length < 2){
             if(metaObj.name && metaObj.root){
                 console.log(`知识节点: ${metaObj.name}, 所属分支: ${metaObj.root}`)
                 request
-                .post('http://maiev.org/wikiapi/knode')
+                // .post('http://maiev.org/wikiapi/knode')  // 废弃
                 .send({
                     name:metaObj.name,
                     root:metaObj.root,

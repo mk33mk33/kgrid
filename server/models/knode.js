@@ -18,7 +18,7 @@ const KnodeSchema = new Schema({
    createdAt: { type: Date, default: Date.now },
    updatedAt: { type: Date, default: Date.now },
    deletedAt: Date,
-   samenode:ObjectId //同义词节点
+   samenode:String //同义词节点
 });
 
 var Knode = conn.model('knode',KnodeSchema)
